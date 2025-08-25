@@ -1,32 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
+  content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      colors: {
-        primary: "#FE8C00",
-        white: {
-          DEFAULT: "#ffffff",
-          100: "#fafafa",
-          200: "#FE8C00",
-        },
-        gray: {
-          100: "#878787",
-          200: "#878787",
-        },
-        dark: {
-          100: "#181C2E",
-        },
-        error: "#F14141",
-        success: "#2F9B65",
-      },
       fontFamily: {
-        quicksand: ["Quicksand-Regular", "sans-serif"],
-        "quicksand-bold": ["Quicksand-Bold", "sans-serif"],
-        "quicksand-semibold": ["Quicksand-SemiBold", "sans-serif"],
-        "quicksand-light": ["Quicksand-Light", "sans-serif"],
-        "quicksand-medium": ["Quicksand-Medium", "sans-serif"],
+        Jakarta: ["Jakarta", "sans-serif"],
+        JakartaBold: ["Jakarta-Bold", "sans-serif"],
+        JakartaExtraBold: ["Jakarta-ExtraBold", "sans-serif"],
+        JakartaExtraLight: ["Jakarta-ExtraLight", "sans-serif"],
+        JakartaLight: ["Jakarta-Light", "sans-serif"],
+        JakartaMedium: ["Jakarta-Medium", "sans-serif"],
+        JakartaSemiBold: ["Jakarta-SemiBold", "sans-serif"],
+      },
+      colors: {
+        primary: {
+          /* your custom colors */
+        },
+        secondary: {
+          /* your custom colors */
+        },
+        success: {
+          /* your custom colors */
+        },
+        danger: {
+          /* your custom colors */
+        },
+        warning: {
+          /* your custom colors */
+        },
+        general: {
+          /* your custom colors */
+        },
       },
     },
   },

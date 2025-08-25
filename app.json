@@ -1,12 +1,17 @@
 {
   "expo": {
-    "name": "fastfood",
-    "slug": "fastfood",
+    "name": "Ryde",
+    "slug": "Ryde",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "fastfood",
+    "scheme": "Ryde",
     "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true

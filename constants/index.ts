@@ -1,202 +1,100 @@
 import arrowDown from "@/assets/icons/arrow-down.png";
-import arrowRight from "@/assets/icons/arrow-right.png";
-import bag from "@/assets/icons/bag.png";
-import check from "@/assets/icons/check.png";
-import clock from "@/assets/icons/clock.png";
+import arrowUp from "@/assets/icons/arrow-up.png";
+import backArrow from "@/assets/icons/back-arrow.png";
+import chat from "@/assets/icons/chat.png";
+import checkmark from "@/assets/icons/check.png";
+import close from "@/assets/icons/close.png";
 import dollar from "@/assets/icons/dollar.png";
-import envelope from "@/assets/icons/envelope.png";
+import email from "@/assets/icons/email.png";
+import eyecross from "@/assets/icons/eyecross.png";
+import google from "@/assets/icons/google.png";
 import home from "@/assets/icons/home.png";
-import location from "@/assets/icons/location.png";
-import logout from "@/assets/icons/logout.png";
-import minus from "@/assets/icons/minus.png";
-import pencil from "@/assets/icons/pencil.png";
+import list from "@/assets/icons/list.png";
+import lock from "@/assets/icons/lock.png";
+import map from "@/assets/icons/map.png";
+import marker from "@/assets/icons/marker.png";
+import out from "@/assets/icons/out.png";
 import person from "@/assets/icons/person.png";
-import phone from "@/assets/icons/phone.png";
-import plus from "@/assets/icons/plus.png";
+import pin from "@/assets/icons/pin.png";
+import point from "@/assets/icons/point.png";
+import profile from "@/assets/icons/profile.png";
 import search from "@/assets/icons/search.png";
+import selectedMarker from "@/assets/icons/selected-marker.png";
 import star from "@/assets/icons/star.png";
-import trash from "@/assets/icons/trash.png";
-import user from "@/assets/icons/user.png";
-import arrowBack from "../assets/icons/arrow-back.png";
+import target from "@/assets/icons/target.png";
+import to from "@/assets/icons/to.png";
+import check from "@/assets/images/check.png";
+import getStarted from "@/assets/images/get-started.png";
+import message from "@/assets/images/message.png";
+import noResult from "@/assets/images/no-result.png";
+import onboarding1 from "@/assets/images/onboarding1.png";
+import onboarding2 from "@/assets/images/onboarding2.png";
+import onboarding3 from "@/assets/images/onboarding3.png";
+import signUpCar from "@/assets/images/signup-car.png";
 
-import avatar from "@/assets/images/avatar.png";
-import avocado from "@/assets/images/avocado.png";
-import bacon from "@/assets/images/bacon.png";
-import burgerOne from "@/assets/images/burger-one.png";
-import burgerTwo from "@/assets/images/burger-two.png";
-import buritto from "@/assets/images/buritto.png";
-import cheese from "@/assets/images/cheese.png";
-import coleslaw from "@/assets/images/coleslaw.png";
-import cucumber from "@/assets/images/cucumber.png";
-import emptyState from "@/assets/images/empty-state.png";
-import fries from "@/assets/images/fries.png";
-import loginGraphic from "@/assets/images/login-graphic.png";
-import logo from "@/assets/images/logo.png";
-import mozarellaSticks from "@/assets/images/mozarella-sticks.png";
-import mushrooms from "@/assets/images/mushrooms.png";
-import onionRings from "@/assets/images/onion-rings.png";
-import onions from "@/assets/images/onions.png";
-import pizzaOne from "@/assets/images/pizza-one.png";
-import salad from "@/assets/images/salad.png";
-import success from "@/assets/images/success.png";
-import tomatoes from "@/assets/images/tomatoes.png";
+export const images = {
+  onboarding1,
+  onboarding2,
+  onboarding3,
+  getStarted,
+  signUpCar,
+  check,
+  noResult,
+  message,
+};
 
-export const CATEGORIES = [
-  {
-    id: "1",
-    name: "All",
-  },
-  {
-    id: "2",
-    name: "Burger",
-  },
-  {
-    id: "3",
-    name: "Pizza",
-  },
-  {
-    id: "4",
-    name: "Wrap",
-  },
-  {
-    id: "5",
-    name: "Burrito",
-  },
-];
+export const icons = {
+  arrowDown,
+  arrowUp,
+  backArrow,
+  chat,
+  checkmark,
+  close,
+  dollar,
+  email,
+  eyecross,
+  google,
+  home,
+  list,
+  lock,
+  map,
+  marker,
+  out,
+  person,
+  pin,
+  point,
+  profile,
+  search,
+  selectedMarker,
+  star,
+  target,
+  to,
+};
 
-export const offers = [
+export const onboarding = [
   {
     id: 1,
-    title: "SUMMER COMBO",
-    image: burgerOne,
-    color: "#D33B0D",
+    title: "The perfect ride is just a tap away!",
+    description:
+      "Your journey begins with Ryde. Find your ideal ride effortlessly.",
+    image: images.onboarding1,
   },
   {
     id: 2,
-    title: "BURGER BASH",
-    image: burgerTwo,
-    color: "#DF5A0C",
+    title: "Best car in your hands with Ryde",
+    description:
+      "Discover the convenience of finding your perfect ride with Ryde",
+    image: images.onboarding2,
   },
   {
     id: 3,
-    title: "PIZZA PARTY",
-    image: pizzaOne,
-    color: "#084137",
-  },
-  {
-    id: 4,
-    title: "BURRITO DELIGHT",
-    image: buritto,
-    color: "#EB920C",
+    title: "Your ride, your way. Let's go!",
+    description:
+      "Enter your destination, sit back, and let us take care of the rest.",
+    image: images.onboarding3,
   },
 ];
 
-export const sides = [
-  {
-    name: "Fries",
-    image: fries,
-    price: 3.5,
-  },
-  {
-    name: "Onion Rings",
-    image: onionRings,
-    price: 4.0,
-  },
-  {
-    name: "Mozarella Sticks",
-    image: mozarellaSticks,
-    price: 5.0,
-  },
-  {
-    name: "Coleslaw",
-    image: coleslaw,
-    price: 2.5,
-  },
-  {
-    name: "Salad",
-    image: salad,
-    price: 4.5,
-  },
-];
-
-export const toppings = [
-  {
-    name: "Avocado",
-    image: avocado,
-    price: 1.5,
-  },
-  {
-    name: "Bacon",
-    image: bacon,
-    price: 2.0,
-  },
-  {
-    name: "Cheese",
-    image: cheese,
-    price: 1.0,
-  },
-  {
-    name: "Cucumber",
-    image: cucumber,
-    price: 0.5,
-  },
-  {
-    name: "Mushrooms",
-    image: mushrooms,
-    price: 1.2,
-  },
-  {
-    name: "Onions",
-    image: onions,
-    price: 0.5,
-  },
-  {
-    name: "Tomatoes",
-    image: tomatoes,
-    price: 0.7,
-  },
-];
-
-export const images = {
-  avatar,
-  avocado,
-  bacon,
-  burgerOne,
-  burgerTwo,
-  buritto,
-  cheese,
-  coleslaw,
-  cucumber,
-  emptyState,
-  fries,
-  loginGraphic,
-  logo,
-  mozarellaSticks,
-  mushrooms,
-  onionRings,
-  onions,
-  pizzaOne,
-  salad,
-  success,
-  tomatoes,
-  arrowBack,
-  arrowDown,
-  arrowRight,
-  bag,
-  check,
-  clock,
-  dollar,
-  envelope,
-  home,
-  location,
-  logout,
-  minus,
-  pencil,
-  person,
-  phone,
-  plus,
-  search,
-  star,
-  trash,
-  user,
+export const data = {
+  onboarding,
 };
