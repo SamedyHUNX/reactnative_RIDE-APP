@@ -179,7 +179,7 @@ export default function SignUp() {
                   code: "",
                 })
               }
-              className="mt-3"
+              className="mt-3 text-black"
               bgVariant="outline"
             />
           </View>
