@@ -1,6 +1,8 @@
 import CustomButton from "@/components/CustomButton";
 import InputField from "@/components/InputField";
+import OAuth from "@/components/OAuth";
 import { icons, images } from "@/constants";
+import { Link } from "expo-router";
 import React, { useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 
@@ -47,7 +49,22 @@ export default function SignUp() {
             onChangeText={(value) => setForm({ ...form, password: value })}
           />
 
-          <CustomButton title="Sign Up" onPress={onSignUpPress} />
+          <CustomButton
+            title="Sign Up"
+            onPress={onSignUpPress}
+            className="mt-1"
+          />
+
+          {/* OAuth */}
+          <OAuth />
+
+          <Link
+            href="/(auth)/sign-in"
+            className="text-lg text-center text-general-200 mt-10"
+          >
+            <Text>Already have an account? </Text>
+            <Text className="text-blue-500">Sign In</Text>
+          </Link>
         </View>
       </View>
     </ScrollView>

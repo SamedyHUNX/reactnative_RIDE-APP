@@ -59,7 +59,7 @@ export default function OnBoarding() {
             ? router.replace("/(auth)/sign-up")
             : swiperRef.current?.scrollBy(1)
         }
-        className="w-11/12 mt-10 mb-4"
+        className="w-[95%] mt-10 mb-4"
       />
     </SafeAreaView>
   );
