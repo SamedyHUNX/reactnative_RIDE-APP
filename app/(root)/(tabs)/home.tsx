@@ -6,6 +6,7 @@ import { rides } from "@/mocks/rides";
 import { useLocationStore } from "@/stores";
 import { useUser } from "@clerk/clerk-expo";
 import * as Location from "expo-location";
+import { useRouter } from "expo-router";
 import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
@@ -20,12 +21,22 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Home() {
   const { setUserLocation, setDestinationLocation } = useLocationStore();
   const { user } = useUser();
+  const router = useRouter();
   const loading = false;
 
   const [hasPermission, setHasPermission] = useState(false);
 
   const handleSignOut = () => {};
-  const handleDestinationPress = () => {};
+  const handleDestinationPress = (location: {
+    latitude: number;
+    longitude: number;
+    address: string;
+  }) => {
+    setDestinationLocation(location);
+
+    console.log("Navigating to find-ride with location:", location);
+    router.push("/(root)/find-ride");
+  };
 
   useEffect(() => {
     const requestLocation = async () => {

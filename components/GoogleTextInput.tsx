@@ -22,6 +22,10 @@ export default function GoogleTextInput({
         predefinedPlaces={[]}
         placeholder="Where do you want to go?"
         debounce={200}
+        minLengthAutocomplete={2}
+        returnKeyType={"search"}
+        listViewDisplayed="auto"
+        enablePoweredByContainer={false}
         styles={{
           textInputContainer: {
             alignItems: "center",
@@ -30,9 +34,12 @@ export default function GoogleTextInput({
             marginHorizontal: 20,
             position: "relative",
             shadowColor: "#d4d4d4",
+            backgroundColor: "transparent",
+            borderTopWidth: 0, 
+            borderBottomWidth: 0, 
           },
           textInput: {
-            backgroundColor: textInputBackgroundColor,
+            backgroundColor: textInputBackgroundColor || "#ffffff",
             borderRadius: 200,
             fontSize: 16,
             height: 50,
@@ -41,11 +48,13 @@ export default function GoogleTextInput({
             shadowOpacity: 0.5,
             shadowRadius: 5,
             elevation: 5,
+            paddingHorizontal: 50, 
+            color: "#000",
           },
           listView: {
             position: "absolute",
-            top: 50,
-            zIndex: 50,
+            top: 55, 
+            zIndex: 999, 
             backgroundColor: "#fff",
             borderRadius: 10,
             marginHorizontal: 20,
@@ -53,26 +62,56 @@ export default function GoogleTextInput({
             shadowOffset: { width: 0, height: 0 },
             shadowOpacity: 0.5,
             shadowRadius: 5,
-            elevation: 5,
+            elevation: 10,
+            maxHeight: 300,
           },
           row: {
             padding: 20,
             height: 58,
+            borderBottomWidth: 1,
+            borderBottomColor: "#f0f0f0",
+          },
+          separator: {
+            height: 1,
+            backgroundColor: "#f0f0f0",
+          },
+          description: {
+            color: "#000",
+            fontSize: 14,
+          },
+          predefinedPlacesDescription: {
+            color: "#1faadb",
           },
         }}
         onPress={(data, details = null) => {
-          handlePress({
-            latitude: details?.geometry.location.lat!,
-            longitude: details?.geometry.location.lng!,
-            address: data.description,
-          });
+          console.log("Place selected:", data.description);
+          console.log("Details:", details);
+
+          if (details && details.geometry && details.geometry.location) {
+            handlePress({
+              latitude: details.geometry.location.lat,
+              longitude: details.geometry.location.lng,
+              address: data.description,
+            });
+          } else {
+            console.error("No details or geometry found for selected place");
+          }
+        }}
+        onFail={(error) => {
+          console.error("GooglePlacesAutocomplete Error:", error);
         }}
         query={{
-          key: googlePlacesApiKey!,
+          key: googlePlacesApiKey,
           language: "en",
+          components: "country:us", // Restrict to specific country if needed
+          types: "establishment", // You can adjust this based on your needs
+          radius: 30000, // Search radius in meters
+        }}
+        GooglePlacesSearchQuery={{
+          rankby: "distance",
         }}
         renderLeftButton={() => (
-          <View className="justify-center items-center w-6 h-6">
+          <View className="absolute left-5 top-3 justify-center items-center w-6 h-6 z-10">
             <Image
               source={icon ? icon : icons.search}
               className="w-6 h-6"
@@ -82,7 +121,10 @@ export default function GoogleTextInput({
         )}
         textInputProps={{
           placeholderTextColor: "gray",
-          placeholder: initialLocation ?? "Where do you want to do?",
+          placeholder: initialLocation ?? "Where do you want to go?",
+          autoCorrect: false,
+          autoCapitalize: "none",
+          returnKeyType: "search",
         }}
       />
     </View>
